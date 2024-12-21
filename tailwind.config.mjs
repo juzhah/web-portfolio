@@ -3,7 +3,7 @@ export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     fontFamily: {
-      sans: ["Inter"],
+      DEFAULT: ["Inter"],
     },
     fontSize: {
       sm: "0.75rem",
@@ -19,6 +19,7 @@ export default {
     colors: {
       transparent: "transparent",
       current: "currentColor",
+      white: "#FBFEF9",
       primary: {
         a0: "#f18f01",
         a10: "#f69b31",
