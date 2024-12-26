@@ -1,0 +1,41 @@
+---
+import ExternalLinkIcon from "../Icons/ExternalLinkIcon.astro";
+import IconJar from "../ui/IconJar.astro";
+---
+
+<footer class="text-white-60">
+  <div
+    class="px-5 lg:px-10 py-8 flex flex-wrap gap-6 md:justify-between items-center"
+  >
+    <p class="prose prose-invert text-white-60">
+      Esta página fue desarrollada con Astro principalmente con el objetivo de
+      expandir mi alcance hasta la web, como también para poner en práctica lo
+      que he estudiado respecto al framework. El diseño de este sitio lo realicé
+      utilizando <a
+        target="_blank"
+        href="https://www.figma.com/design/Xf1jaAFl11Ncno2lDndwLu/Web-Portfolio?node-id=0-1&t=VZGlQHEN2lIW58bu-1"
+        >Figma</a
+      >. Puedes ver el código fuente en <a
+        target="_blank"
+        href="https://github.com/juzhah/web-portfolio">GitHub</a
+      >.
+    </p>
+    <div>
+      <a
+        target="_blank"
+        href="JuanEstebanLozada.pdf"
+        class="underline inline-flex items-center gap-2"
+      >
+        Hoja de Vida
+        <ExternalLinkIcon />
+      </a>
+      <IconJar display="flex" />
+    </div>
+  </div>
+</footer>
+
+<style>
+  a {
+    @apply text-white-30;
+  }
+</style>

@@ -1,0 +1,25 @@
+---
+import GithubIcon from "../Icons/GithubIcon.astro";
+import LinkedinIcon from "../Icons/LinkedinIcon.astro";
+import MailIcon from "../Icons/MailIcon.astro";
+import IconButton from "./IconButton.astro";
+
+interface Props {
+  display: "flex" | "flex-col";
+}
+const { display } = Astro.props;
+---
+
+<div class={`${display} gap-3 text-white-40 w-fit`}>
+  <IconButton href="https://www.linkedin.com/in/juan-lozada/">
+    <LinkedinIcon />
+  </IconButton>
+
+  <IconButton href="https://www.linkedin.com/in/juan-lozada/">
+    <MailIcon />
+  </IconButton>
+
+  <IconButton href="https://github.com/juzhah">
+    <GithubIcon />
+  </IconButton>
+</div>

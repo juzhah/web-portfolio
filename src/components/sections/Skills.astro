@@ -1,0 +1,74 @@
+---
+import Section from "../../layouts/Section.astro";
+import ToolLabel from "../ui/ToolLabel.astro";
+
+const tools = {
+  progLangs: [
+    "JavaScript",
+    "TypeScript",
+    "Python ",
+    "C++",
+    "CSS",
+    "HTML",
+    "PHP",
+  ],
+  frameworksLibs: [
+    "Laravel",
+    "Node.js",
+    "Express.js",
+    "React.js",
+    "Astro.js",
+    "Zustand",
+    "Pandas",
+    "Tailwind CSS",
+    "Mantine",
+  ],
+
+  databases: ["SQLite", "MySQL", "MongoDB", "Firebase"],
+
+  tools: [
+    "Git",
+    "Github",
+    "Figma",
+    "pnpm ",
+    "Npm",
+    "XAMP",
+    "Vite",
+    "RESTAPIs",
+    "OOP",
+  ],
+
+  languages: ["English", "Spanish", "Portuguese", "German"],
+};
+---
+
+<Section elementId="Skills" subtitle="Mis Habilidades">
+  <h3 class="heading">Lenguajes | Frameworks | Librerías</h3>
+  <div class="tools-grid">
+    {tools.progLangs.map((tool) => <ToolLabel name={tool} />)}
+    {tools.databases.map((tool) => <ToolLabel name={tool} />)}
+    {tools.frameworksLibs.map((tool) => <ToolLabel name={tool} />)}
+  </div>
+
+  <h3 class="heading">Herramientas</h3>
+  <div class="tools-grid">
+    {tools.tools.map((tool) => <ToolLabel name={tool} />)}
+  </div>
+  <h3 class="heading">Idiomas</h3>
+  <div class="tools-grid">
+    {tools.languages.map((tool) => <ToolLabel name={tool} />)}
+  </div>
+</Section>
+
+<style>
+  .heading {
+    @apply text-2xl mb-4;
+  }
+  .tools-grid {
+    display: flex;
+    flex-wrap: wrap;
+    @apply gap-2;
+    justify-content: center;
+    @apply mb-5;
+  }
+</style>

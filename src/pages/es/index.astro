@@ -1,0 +1,43 @@
+---
+import About from "../../components/sections/About.astro";
+import Footer from "../../components/sections/Footer.astro";
+import Landing from "../../components/sections/Landing.astro";
+import Projects from "../../components/sections/Projects.astro";
+import Skills from "../../components/sections/Skills.astro";
+import IconJar from "../../components/ui/IconJar.astro";
+import LanguageSelector from "../../components/ui/LanguageSelector.astro";
+
+import Layout from "../../layouts/Layout.astro";
+
+import { getRelativeLocaleUrl } from "astro:i18n";
+
+// defaultLocale is "es"
+const aboutURL = getRelativeLocaleUrl("es", "about");
+---
+
+<Layout>
+  <!-- <LanguageSelector /> -->
+
+  <main>
+    <Landing />
+    <About />
+    <Projects />
+    <Skills />
+  </main>
+  <Footer />
+</Layout>
+
+<style is:global>
+  html {
+    scroll-snap-type: y mandatory;
+  }
+
+  section {
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+  }
+  footer {
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+  }
+</style>

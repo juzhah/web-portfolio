@@ -1,0 +1,48 @@
+---
+import Image from "astro/components/Image.astro";
+import GithubIcon from "../Icons/GithubIcon.astro";
+import ToolLabel from "./ToolLabel.astro";
+
+const { data } = Astro.props;
+const { title, type, description, cover, coverAlt, tools, github, prodView } =
+  data;
+---
+
+<div class="bg-surface-a10 rounded-lg mb-3 max-w-[420px] relative">
+  {
+    github && (
+      <a class="absolute top-3 right-3" target="_blank" href={github}>
+        <GithubIcon size={16} />
+      </a>
+    )
+  }
+
+  <Image src={cover} alt={coverAlt} class="bg-primary-a0 h-[85px] w-[100%]" />
+  <div class="p-4">
+    <a href={prodView ? prodView : ""} target="_blank">
+      <h4 class="text-base font-bold mb-2">
+        {title} | <span>{type}</span>
+      </h4>
+    </a>
+    <p class="text-white-40">{description}</p>
+
+    <!-- Techs list/map -->
+    <!-- TODO: Fix grid with overflow on larger sets -->
+    {
+      tools && (
+        <div class="flex flex-wrap gap-2 mt-6 ">
+          {tools.map((tool: string) => (
+            <ToolLabel name={tool} />
+          ))}
+        </div>
+      )
+    }
+  </div>
+
+  <!-- TODO: Fix this with an actual image -->
+  <style>
+    img {
+      border-radius: 16px 16px 0 0;
+    }
+  </style>
+</div>

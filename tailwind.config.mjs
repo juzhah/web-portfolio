@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+import typography from "@tailwindcss/typography";
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
@@ -19,7 +20,16 @@ export default {
     colors: {
       transparent: "transparent",
       current: "currentColor",
-      white: "#FBFEF9",
+      white: {
+        DEFAULT: "#FBFEF9",
+        10: "#e2e5e0",
+        20: "#c9cbc7",
+        30: "#b0b2ae",
+        40: "#979895",
+        50: "#7e7f7d",
+        60: "#646664",
+        70: "#4b4c4b",
+      },
       primary: {
         a0: "#f18f01",
         a10: "#f69b31",
@@ -57,5 +67,8 @@ export default {
       11: "240px",
     },
   },
-  plugins: [],
+  plugins: [
+    typography,
+    // ...
+  ],
 };

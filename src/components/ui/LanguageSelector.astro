@@ -1,0 +1,34 @@
+---
+import ArrowDownIcon from "../Icons/ArrowDownIcon.astro";
+---
+
+<div class="flex-col gap-x-5 absolute top-3 right-3">
+  <button
+    id="language-selector"
+    class="flex items-center bg-surface-a10 px-2 py-1 rounded-lg w-fit cursor-pointer relative text-white-60"
+  >
+    <span class="">es</span>
+    <ArrowDownIcon />
+  </button>
+  <div
+    id="language-list"
+    style="display: none"
+    class="bg-surface-a10 p-2 w-fit rounded-lg mt-2 absolute right-1 text-white-60 hover:text-white-20"
+  >
+    <a href="">Español</a>
+    <a href="">English</a>
+  </div>
+</div>
+
+<script>
+  const language = document.getElementById("language-selector");
+
+  const langList = document.getElementById("language-list");
+  const langListDisplay = langList!.style;
+
+  language!.addEventListener("click", () => {
+    langListDisplay.display === "none"
+      ? (langListDisplay.display = "block")
+      : (langListDisplay.display = "none");
+  });
+</script>

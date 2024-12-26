@@ -1,0 +1,24 @@
+---
+import Section from "../../layouts/Section.astro";
+
+import { getCollection } from "astro:content";
+import Project from "../ui/Project.astro";
+import ExternalLinkIcon from "../Icons/ExternalLinkIcon.astro";
+
+const projects = await getCollection("projects");
+---
+
+<Section elementId="Projects" subtitle="Proyectos">
+  <!-- Map project components -->
+  <div class="flex flex-wrap justify-center gap-6">
+    {projects.map((project) => <Project data={project.data} />)}
+  </div>
+
+  <a
+    href="#"
+    class="font-bold underline inline-flex gap-2 items-center text-primary-a0"
+  >
+    Check All my projects
+    <ExternalLinkIcon />
+  </a>
+</Section>
